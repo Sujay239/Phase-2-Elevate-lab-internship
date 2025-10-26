@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="css/landingPage.css">
+    <link rel="stylesheet" href="css/edit-book.css">
+</head>
+
+<body>
+
+<div class="edit-container">
+    <h2>✏️ Edit Book</h2>
+
+    <form id="edit-book-form">
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="isbn">ISBN:</label>
+        <input type="number" id="isbn" name="isbn" required disabled>
+
+        <label for="genre">Genre:</label>
+        <select id="genre" name="genre" required>
+            <option value="">Select Genre</option>
+            <option>FICTION</option>
+            <option>NON_FICTION</option>
+            <option>SCIENCE_FICTION</option>
+            <option>MYSTERY</option>
+            <option>ROMANCE</option>
+            <option>THRILLER</option>
+            <option>BIOGRAPHY</option>
+            <option>HISTORY</option>
+            <option>SELF_HELP</option>
+            <option>TECHNOLOGY</option>
+        </select>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" required step="0.01">
+
+        <button type="submit">💾 Save Changes</button>
+        <button type="button" id="cancel-btn">❌ Cancel</button>
+    </form>
+</div>
+
+<!-- Neon Popup Message -->
+<div id="messageBox" class="message-box hidden" role="dialog" aria-modal="true" aria-labelledby="messageText">
+    <div class="message-content">
+        <p id="messageText">Message</p>
+        <button id="okButton" type="button">OK</button>
+    </div>
+</div>
+
+<script src="js/edit-book.js"></script>
+</body>
+</html>

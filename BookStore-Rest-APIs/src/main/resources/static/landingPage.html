@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author Dashboard</title>
+    <link rel="stylesheet" href="css/landingPage.css">k
+</head>
+<body>
+<div id="header">
+    <nav id="navbar">
+        <button id="home-btn"><a href="#" style="text-decoration: none">🏠</a></button>
+        <div id="bookstore-title">📚 Book Store</div>
+        <div class="nav-right">
+            <button id="logout-btn">Logout</button>
+            <button class="dark-mode"></button>
+        </div>
+    </nav>
+</div>
+
+<div>
+    <h2 id="welcome-msg">🚀 Welcome to the Author Dashboard</h2>
+    <p id="user">Hello, <strong id="username">Author Name</strong> 👋</p>
+    <button class="add-btn"><a href="add-book.html">➕ Add New Book 📔</a></button>
+    <button class="add-btn"><a href="seeBooks.html">See All Books</a></button>
+</div>
+
+<h3>Your Books</h3>
+<div id="book-list">
+    <div id="books-ul">
+        <div class="book-card">
+
+        </div>
+    </div>
+</div>
+<!-- Confirm Delete Message Box -->
+<div id="confirmBox" class="message-box hidden" role="dialog" aria-modal="true">
+    <div class="message-content">
+        <p id="confirmText">Are you sure you want to delete this book?</p>
+        <div class="msg-btns">
+            <button id="confirmYes">Yes</button>
+            <button id="confirmNo">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- Result Message Box -->
+<div id="resultBox" class="message-box hidden" role="dialog" aria-modal="true">
+    <div class="message-content">
+        <p id="resultText">Message</p>
+        <button id="okBtn">OK</button>
+    </div>
+</div>
+
+
+<script src="js/landing.js"></script>
+</body>
+</html>

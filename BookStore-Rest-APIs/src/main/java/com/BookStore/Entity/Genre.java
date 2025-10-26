@@ -1,0 +1,6 @@
+package com.BookStore.Entity;
+
+public enum Genre {
+    FICTION, NON_FICTION, SCIENCE_FICTION, MYSTERY, ROMANCE,
+    THRILLER, BIOGRAPHY, HISTORY, SELF_HELP, TECHNOLOGY
+}

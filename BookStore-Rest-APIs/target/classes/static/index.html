@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id ="login-section" style="display: block;">
+    <h1 class="app">📚 Book Store</h1>
+    <h1>Login</h1>
+    <form id="login-form">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <small>Do not have any account? <a id="register">Register</a></small>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<div id="register-section" style="display: none;">
+    <h1 class="app">📚 Book Store</h1>
+    <h1>Register</h1>
+    <form id="register-form">
+        <label for="new-username">Full Name:</label>
+        <input type="text" id="new-username" name="new-username" required>
+        <br>
+        <label for="new-email">Email:</label>
+        <input type="text" id="new-email" name="new-username" required>
+        <br>
+        <label for="new-password">Password:</label>
+        <input type="password" id="new-password" name="new-password" required>
+        <br>
+        <label for="cnf-password">Confirm Password:</label>
+        <input type="password" id="cnf-password" name="cnf-password" required>
+        <br>
+        <label for="biography">Biography</label>
+        <input type="text" id="biography" name="biography" required>
+        <br>
+        <small>Already have an account? <a id="login">Login</a></small>
+        <br>
+        <small id="errMsg"></small>
+        <button type="submit" >Register</button>
+    </form>
+</div>
+
+<!-- Message Popup -->
+<div id="messageBox" class="message-box hidden">
+    <div class="message-content">
+        <p id="messageText"></p>
+        <button id="okButton" onclick="hideMessage()">OK</button>
+    </div>
+</div>
+
+<script src="js/script.js">
+</script>
+</body>
+</html>

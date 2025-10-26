@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #00c6ff;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #0072ff;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .result a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .copy-btn {
+            margin-top: 10px;
+            background: #4caf50;
+        }
+
+        .copy-btn:hover {
+            background: #388e3c;
+        }
+
+        .error {
+            color: #ff5555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>🔗 URL Shortener</h1>
+    <input type="text" id="originalUrl" placeholder="Enter your long URL here...">
+    <button onclick="shortenUrl()">Shorten URL</button>
+
+    <div class="result" id="result">
+        <p><strong>Shortened URL:</strong></p>
+        <a id="shortUrl" target="_blank"></a>
+        <button class="copy-btn" onclick="copyUrl()">📋 Copy</button>
+    </div>
+
+    <p id="error" class="error"></p>
+</div>
+
+<script>
+    async function shortenUrl() {
+        const urlInput = document.getElementById("originalUrl");
+        const resultDiv = document.getElementById("result");
+        const errorMsg = document.getElementById("error");
+        const shortUrlElement = document.getElementById("shortUrl");
+
+        const originalUrl = urlInput.value.trim();
+        if (!originalUrl) {
+            errorMsg.textContent = "Please enter a valid URL.";
+            resultDiv.style.display = "none";
+            return;
+        }
+
+        try {
+            errorMsg.textContent = "Processing...";
+            const response = await fetch("http://localhost:8080/api/shorten", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ originalUrl })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                errorMsg.textContent = data.error || "Something went wrong!";
+                resultDiv.style.display = "none";
+            } else {
+                shortUrlElement.href = data.shortUrl;
+                shortUrlElement.textContent = data.shortUrl;
+                resultDiv.style.display = "block";
+                errorMsg.textContent = "";
+            }
+
+        } catch (err) {
+            errorMsg.textContent = "Error: " + err.message;
+            resultDiv.style.display = "none";
+        }
+    }
+
+    function copyUrl() {
+        const shortUrl = document.getElementById("shortUrl").textContent;
+        navigator.clipboard.writeText(shortUrl);
+        alert("Copied to clipboard!");
+    }
+</script>
+</body>
+</html>

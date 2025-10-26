@@ -1,0 +1,440 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Body */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #1e293b);
+    color: #e2e8f0;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+#header {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/*#navbar {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    padding: 14px 60px;*/
+/*}*/
+
+/*#navbar div {*/
+/*    font-size: 22px;*/
+/*    font-weight: 600;*/
+/*    letter-spacing: 1px;*/
+/*    color: #93c5fd;*/
+/*}*/
+
+/*#navbar button {*/
+/*    background: transparent;*/
+/*    border: 2px solid #60a5fa;*/
+/*    color: #bfdbfe;*/
+/*    font-size: 16px;*/
+/*    font-weight: 500;*/
+/*    padding: 8px 18px;*/
+/*    border-radius: 12px;*/
+/*    cursor: pointer;*/
+/*    transition: all 0.3s ease;*/
+/*}*/
+
+#navbar button:hover {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 0 0 15px #3b82f6;
+    transform: scale(1.05);
+}
+
+/* Welcome Section */
+#welcome-msg {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #60a5fa;
+    text-shadow: 0 0 12px #2563eb;
+    animation: fadeInDown 1.5s ease;
+}
+
+#user {
+    text-align: center;
+    font-size: 20px;
+    color: #cbd5e1;
+    margin-top: -5px;
+    animation: fadeInUp 2s ease;
+}
+
+/* Add Book Button */
+.add-btn {
+    display: block;
+    margin: 40px auto;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.6);
+    transition: all 0.4s ease;
+    animation: pulse 2.5s infinite;
+}
+
+.add-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 25px #6366f1;
+}
+
+.add-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Book List Section */
+#book-list {
+    width: 85%;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.2);
+    backdrop-filter: blur(20px);
+    animation: fadeInUp 2s ease;
+}
+
+h3 {
+    /*margin-left: 50%;*/
+    text-align: center;
+    color: #60a5fa;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#books-ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.book-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 12px rgba(96, 165, 250, 0.1);
+}
+
+.book-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 0 25px rgba(96, 165, 250, 0.4);
+    background: rgba(96, 165, 250, 0.1);
+}
+
+.book-card h4 {
+    margin-bottom: 10px;
+    color: #f1f5f9;
+}
+
+.book-card p {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px #6366f1; }
+    50% { box-shadow: 0 0 25px #818cf8; }
+    100% { box-shadow: 0 0 10px #6366f1; }
+}
+/* ====== DARK MODE ====== */
+.dark-mode {
+    --bg-color: #0f172a;
+    --text-color: #e2e8f0;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --accent-color: #60a5fa;
+    --secondary-text: #94a3b8;
+    --nav-bg: rgba(15, 23, 42, 0.8);
+    --shadow-color: rgba(99, 102, 241, 0.3);
+}
+
+/* ====== ENHANCED LIGHT MODE ====== */
+.light-mode {
+    --bg-color: #f0f4ff;                  /* soft bluish white background */
+    --text-color: #090c11;                /* dark navy text */
+    --card-bg: #ffffff;                   /* pure white cards */
+    --accent-color: #2563eb;              /* rich blue accent */
+    --secondary-text: #475569;            /* softer gray-blue text */
+    --nav-bg: #ffffff;                    /* clean white navbar */
+    --shadow-color: rgba(37, 99, 235, 0.15); /* light blue glow */
+}
+
+/* ====== SHARED STYLES ====== */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Poppins", sans-serif;
+    transition: all 0.5s ease;
+}
+
+#header {
+    background: var(--nav-bg);
+    box-shadow: 0 2px 12px var(--shadow-color);
+    transition: all 0.4s ease;
+}
+
+button {
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 0 15px var(--accent-color);
+    transform: scale(1.05);
+}
+
+.book-card {
+    background: var(--card-bg);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.08);
+    color: var(--text-color);
+    border-radius: 16px;
+    transition: all 0.4s ease;
+    border: 2px solid greenyellow;
+}
+
+.book-card:hover {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.25);
+    transform: translateY(-6px);
+}
+
+.book-card p {
+    color: var(--secondary-text);
+}
+
+#welcome-msg {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+.add-btn {
+    background: linear-gradient(90deg, #3b82f6, #6366f1);
+    color: #fff;
+    box-shadow: 0 0 18px rgba(99, 102, 241, 0.4);
+}
+
+/* Navbar Container */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 60px;
+    background: var(--nav-bg);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 0.4s ease;
+}
+
+/* Home Button (left) */
+#home-btn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#home-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Center Book Store Title */
+#bookstore-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    flex-grow: 1;
+    text-align: center;
+    pointer-events: none; /* Prevent accidental clicks */
+}
+
+/* Right Section (Mode + Logout Buttons) */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Mode Toggle Button */
+#mode-toggle {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 18px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#mode-toggle:hover {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Logout Button */
+#logout-btn {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#logout-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+#user , #title{
+    color: var(--text-color);
+}
+
+.book-card {
+    background: var(--card-bg, #f3f3f3);
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #e53935;
+    color: white;
+}
+
+.edit-btn:hover { background-color: #43a047; }
+.delete-btn:hover { background-color: #c62828; }
+
+.message-box {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+}
+
+.message-box.hidden {
+    display: none;
+}
+
+.message-content {
+    background: rgba(20, 20, 35, 0.9);
+    border: 1px solid rgba(0, 255, 247, 0.3);
+    border-radius: 15px;
+    padding: 25px 30px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 255, 247, 0.4), 0 0 50px rgba(162, 76, 255, 0.2);
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.message-content p {
+    color: #00fff7;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px #00fff7;
+    margin-bottom: 20px;
+}
+
+.message-content button {
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    background: linear-gradient(90deg, #00fff7, #a24cff);
+    color: #000;
+    box-shadow: 0 0 15px #00fff7, 0 0 30px #a24cff;
+    transition: all 0.3s ease;
+}
+
+.message-content button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00fff7, 0 0 50px #a24cff;
+}
+
+.msg-btns {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+

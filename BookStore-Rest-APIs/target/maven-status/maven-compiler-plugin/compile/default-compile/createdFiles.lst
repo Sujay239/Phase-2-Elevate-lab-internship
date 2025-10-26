@@ -1,0 +1,16 @@
+com\BookStore\config\SwaggerConfig.class
+com\BookStore\BookStoreApplication.class
+com\BookStore\controller\BookController.class
+com\BookStore\controller\AuthorController.class
+com\BookStore\repository\AuthorRepository.class
+com\BookStore\Entity\Book.class
+com\BookStore\DTO\AuthorDTO.class
+com\BookStore\Entity\Author.class
+com\BookStore\controller\check.class
+com\BookStore\DTO\BookDTO.class
+com\BookStore\service\AuthorService.class
+com\BookStore\config\SpringConfig.class
+com\BookStore\service\BookService.class
+com\BookStore\Entity\Genre.class
+com\BookStore\exception\GlobalExceptionHandler.class
+com\BookStore\repository\BookRepository.class

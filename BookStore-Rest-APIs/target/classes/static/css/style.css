@@ -1,0 +1,224 @@
+
+/* ===== Reset and Base Styling ===== */
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    overflow: hidden;
+}
+
+/* ===== Container ===== */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 40px 50px;
+    width: 380px;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease forwards;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+/* ===== Form Inputs ===== */
+label {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 15px;
+}
+
+input::placeholder {
+    color: #eee;
+}
+
+/* ===== Buttons ===== */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+small {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #eee;
+}
+
+a {
+    color: #ffb347;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #ffd36b;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.fade-out {
+    animation: fadeOut 0.4s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.95); }
+}
+
+/* ===== Floating Particles (optional aesthetic) ===== */
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.4;
+    background: white;
+    animation: float 10s infinite ease-in-out alternate;
+}
+
+#login-section{
+    box-sizing: border-box;
+    width: 30%;
+    border: 2px solid cyan;
+    border-radius: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+#register-section{
+    box-sizing: border-box;
+    width: 30%;
+    border: 2px solid cyan;
+    border-radius: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+@keyframes float {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-60px); }
+}
+
+.circle:nth-child(1) { width: 80px; height: 80px; top: 10%; left: 10%; animation-delay: 0s; }
+.circle:nth-child(2) { width: 100px; height: 100px; bottom: 15%; right: 15%; animation-delay: 2s; }
+.circle:nth-child(3) { width: 60px; height: 60px; top: 50%; left: 70%; animation-delay: 4s; }
+
+
+/* Overlay background */
+.message-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Hidden by default */
+.hidden {
+    display: none;
+}
+
+/* Inner content */
+.message-content {
+    background-color: #fff;
+    color: #333;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Message text */
+.message-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* OK button styling */
+#okButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+#okButton:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.app{
+    border-radius: 8px;
+    border: 2px solid #00ff58;
+}
