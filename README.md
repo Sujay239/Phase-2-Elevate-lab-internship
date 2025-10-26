@@ -153,7 +153,7 @@ URL-Shortner/
 ## 👨‍💻 Author
 **Sujay239**  
 🚀 Passionate Developer | Java • Spring Boot • React • Node.js  
-📧 Contact: *[your-email@example.com]*  
+📧 Contact: *[sujaykumarkotal8520@gmail.com]*  
 🌐 GitHub: [https://github.com/Sujay239](https://github.com/Sujay239)
 
 ---
